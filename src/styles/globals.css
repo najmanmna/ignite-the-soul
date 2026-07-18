@@ -84,6 +84,11 @@
      per "Generous line spacing" in docs/02-brand-guidelines.md. */
   --text-hero: 5rem; /* 80px, midpoint of the documented 72-88px range */
   --text-hero--line-height: 1.05;
+  /* Desktop-only (1280px+) step-up for the homepage hero headline specifically —
+     a deliberate +20% beyond the documented 72-88px hero range, per direct
+     request for a stronger opening statement on larger screens. */
+  --text-hero-lg: 6rem; /* 96px */
+  --text-hero-lg--line-height: 1.05;
   --text-h1: 3.5rem; /* 56px */
   --text-h1--line-height: 1.1;
   --text-h2: 2.625rem; /* 42px */

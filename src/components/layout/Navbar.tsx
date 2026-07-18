@@ -41,20 +41,20 @@ export function Navbar() {
   return (
     <header id="top" className="bg-primary text-primary-foreground">
       <Container>
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-24 items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
             <Image
               src="/images/logo.png"
               alt=""
-              width={48}
-              height={48}
-              className="h-12 w-12 rounded-full object-cover"
+              width={56}
+              height={56}
+              className="h-14 w-14 rounded-full object-cover"
             />
             <span className="font-display text-h4">Ignite The Soul</span>
           </Link>
 
           <nav aria-label="Primary" className="hidden md:block">
-            <ul className="flex items-center gap-8">
+            <ul className="flex items-center gap-10">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -63,7 +63,7 @@ export function Navbar() {
                       href={link.href}
                       aria-current={isActive ? "page" : undefined}
                       className={cn(
-                        "text-body transition-opacity hover:opacity-100",
+                        "text-body transition-all hover:font-semibold hover:opacity-100",
                         isActive
                           ? "underline underline-offset-4 opacity-100"
                           : "opacity-90"
@@ -121,7 +121,7 @@ export function Navbar() {
                       href={link.href}
                       aria-current={isActive ? "page" : undefined}
                       className={cn(
-                        "block min-h-11 py-3 text-body",
+                        "block min-h-11 py-3 text-body transition-all hover:font-semibold",
                         isActive ? "underline underline-offset-4" : "opacity-90"
                       )}
                     >

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/shared/SectionHeading";
+import { cn } from "@/utils/cn";
 
 interface PastEventPhoto {
   src: string;
@@ -57,31 +58,48 @@ export function PastEvents({
           viewport={{ once: true, margin: "-100px" }}
           className={
             hasPhotos
-              ? "mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3"
+              ? "mt-12 grid grid-cols-2 gap-4"
               : "mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6"
           }
         >
-          {items.map((photo, index) => (
-            <motion.li key={photo ? photo.src : index} variants={itemVariants}>
-              {photo ? (
-                <div className="relative aspect-square overflow-hidden rounded-image">
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    fill
-                    className="object-cover transition-transform duration-1000 hover:scale-105"
-                    sizes="(max-width: 640px) 50vw, 33vw"
+          {items.map((photo, index) => {
+            // Editorial rhythm rather than a uniform grid: the last photo
+            // runs large and full-width beneath the smaller squares above it.
+            const isLarge = hasPhotos && index === items.length - 1;
+            return (
+              <motion.li
+                key={photo ? photo.src : index}
+                variants={itemVariants}
+                className={isLarge ? "col-span-2" : undefined}
+              >
+                {photo ? (
+                  <div
+                    className={cn(
+                      "relative overflow-hidden rounded-image",
+                      isLarge ? "aspect-3/2" : "aspect-square"
+                    )}
+                  >
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      className="object-cover transition-transform duration-1000 hover:scale-105"
+                      sizes={isLarge ? "100vw" : "(max-width: 640px) 50vw, 33vw"}
+                    />
+                  </div>
+                ) : (
+                  <div
+                    role="img"
+                    aria-label="Event photography coming soon"
+                    className={cn(
+                      "rounded-image bg-secondary/40",
+                      isLarge ? "aspect-3/2" : "aspect-square"
+                    )}
                   />
-                </div>
-              ) : (
-                <div
-                  role="img"
-                  aria-label="Event photography coming soon"
-                  className="aspect-square rounded-image bg-secondary/40"
-                />
-              )}
-            </motion.li>
-          ))}
+                )}
+              </motion.li>
+            );
+          })}
         </motion.ul>
       </Container>
     </Section>
