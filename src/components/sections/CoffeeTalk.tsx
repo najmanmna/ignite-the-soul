@@ -63,8 +63,8 @@ export function CoffeeTalk({
           src={imageSrc}
           alt={imageAlt}
           fill
-          // Added a 10-second ease-out hover zoom for continuous, breathing motion
-          className="object-cover transition-transform duration-[10s] ease-out hover:scale-[1.03]"
+          // Slow, subtle hover zoom for continuous, breathing motion
+          className="object-cover transition-transform duration-1000 ease-out hover:scale-105"
           sizes="100vw"
         />
       </motion.div>
@@ -77,12 +77,16 @@ export function CoffeeTalk({
           transition={{ ...transition, delay: 0.15 }}
           className="mx-auto mt-16 flex max-w-3xl flex-col items-center text-center lg:mt-20"
         >
-          {/* Subtle highlights */}
-          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
+          {/* Subtle highlights — stacked on mobile rather than wrapped, so a
+              divider dot never gets orphaned at the start of a wrapped line. */}
+          <ul className="flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-6 sm:gap-y-4">
             {highlights.map((highlight, index) => (
               <li key={highlight.label} className="flex items-center gap-6">
                 {index > 0 && (
-                  <span aria-hidden="true" className="h-1 w-1 rounded-full bg-accent/40" />
+                  <span
+                    aria-hidden="true"
+                    className="hidden h-1 w-1 rounded-full bg-accent/40 sm:block"
+                  />
                 )}
                 <span className="text-caption uppercase tracking-[0.2em] text-primary/90">
                   {highlight.label}
