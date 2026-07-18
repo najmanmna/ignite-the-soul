@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+/*
+  Design tokens for Ignite The Soul.
+  Source of truth: docs/02-brand-guidelines.md, docs/03-design-system.md.
+  Colors live in :root (raw values) and are mapped into Tailwind's
+  utility-generating namespace via `@theme inline`, so a future dark
+  theme (not currently in scope) can be added as a `.dark { }` override
+  without restructuring this file. Structural tokens (type, spacing,
+  radius, shadow, layout) don't need that indirection, so they sit in a
+  plain `@theme` block.
+*/
+
+:root {
+  /* Brand palette */
+  --background: #faf8f5; /* Ivory */
+  --foreground: #2d2d2d; /* Deep Charcoal */
+  --muted-foreground: #6f6a66; /* Warm Gray */
+
+  --primary: #1f5a5a; /* Deep Teal */
+  --primary-foreground: #faf8f5;
+
+  --secondary: #a8b8a2; /* Sage Green */
+  --secondary-foreground: #2d2d2d;
+
+  --muted: #e9dfc9; /* Sand */
+
+  --accent: #a66a3f; /* Bronze */
+  --accent-foreground: #faf8f5;
+
+  /* Card purpose is explicitly "Sage Green" per docs/03-design-system.md Color System */
+  --card: #a8b8a2;
+  --card-foreground: #2d2d2d;
+
+  /* Not documented explicitly — defaulting popovers to the base canvas for legibility */
+  --popover: #faf8f5;
+  --popover-foreground: #2d2d2d;
+
+  /* NOT in brand docs. Forms need an error state; this is a proposed muted,
+     warm-toned red consistent with "never aggressive" (docs/02). Needs
+     founder/brand sign-off before use in production UI. */
+  --destructive: #b3453d;
+  --destructive-foreground: #faf8f5;
+
+  /* docs/03: "Borders: 1px, warm neutral colors" — reusing Sand rather than inventing a new hex */
+  --border: #e9dfc9;
+  --input: #e9dfc9;
+
+  /* Focus ring uses Primary for visibility against the Ivory canvas */
+  --ring: #1f5a5a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+@theme {
+  /* Fonts — wired to next/font variables set in src/app/layout.tsx.
+     --font-sans overrides Tailwind's default body font so plain text
+     uses Inter without needing an explicit utility class. */
+  --font-display: var(--font-cormorant-garamond), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Typography scale — docs/03-design-system.md Typography Scale (desktop values).
+     Tight line-heights on display sizes, generous (~1.6-1.7) on body copy,
+     per "Generous line spacing" in docs/02-brand-guidelines.md. */
+  --text-hero: 5rem; /* 80px, midpoint of the documented 72-88px range */
+  --text-hero--line-height: 1.05;
+  --text-h1: 3.5rem; /* 56px */
+  --text-h1--line-height: 1.1;
+  --text-h2: 2.625rem; /* 42px */
+  --text-h2--line-height: 1.15;
+  --text-h3: 2rem; /* 32px */
+  --text-h3--line-height: 1.2;
+  --text-h4: 1.5rem; /* 24px */
+  --text-h4--line-height: 1.3;
+  --text-body-lg: 1.25rem; /* 20px */
+  --text-body-lg--line-height: 1.7;
+  --text-body: 1.125rem; /* 18px */
+  --text-body--line-height: 1.7;
+  --text-small: 1rem; /* 16px */
+  --text-small--line-height: 1.6;
+  --text-caption: 0.875rem; /* 14px */
+  --text-caption--line-height: 1.5;
+
+  /* Spacing — Tailwind's default --spacing base (0.25rem = 4px) already covers
+     the documented 8px system exactly via even-numbered utilities
+     (p-2=8px, p-4=16px, p-6=24px, p-8=32px, p-12=48px, p-16=64px, p-24=96px, p-32=128px).
+     Only the named section-padding range needs its own tokens. */
+  --spacing-section-sm: 6rem; /* 96px */
+  --spacing-section-lg: 10rem; /* 160px */
+
+  /* Layout — docs/03-design-system.md Layout section */
+  --container-content: 80rem; /* 1280px max content width */
+  --container-reading: 45rem; /* 720px reading width */
+
+  /* Border radius — docs/03-design-system.md Border Radius (per-component values, not a derived scale) */
+  --radius-button: 0.75rem; /* 12px */
+  --radius-input: 0.75rem; /* 12px */
+  --radius-card: 1.25rem; /* 20px */
+  --radius-image: 1.25rem; /* 20px */
+
+  /* Shadows — docs/02-brand-guidelines.md: "very subtle... never heavy drop shadows."
+     Prefer these two over Tailwind's default shadow-md/lg/xl/2xl scale. */
+  --shadow-subtle: 0 1px 2px rgb(45 45 45 / 0.04);
+  --shadow-soft: 0 8px 24px rgb(45 45 45 / 0.06);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
