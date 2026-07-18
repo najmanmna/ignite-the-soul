@@ -23,13 +23,6 @@ interface CoffeeTalkProps {
 
 const transition = { duration: 1.2, ease: [0.25, 0.1, 0.25, 1] as const };
 
-// Coffee Talk is the brand's signature circle, not just another offering —
-// this section is deliberately its own editorial moment (full-bleed photo,
-// no card, no button) sitting between Meet Mafaza and the Offerings grid,
-// so visitors feel invited into the community before browsing services.
-// Content is adapted from the brand's own Coffee Talk Instagram carousel,
-// condensed to short, emotional copy rather than the carousel's full
-// feature list — and none of the carousel's graphics/overlays are reused.
 export function CoffeeTalk({
   eyebrow = "A Signature Experience",
   heading,
@@ -41,7 +34,8 @@ export function CoffeeTalk({
   ctaHref,
 }: CoffeeTalkProps) {
   return (
-    <Section className="bg-background">
+    // size="large" ensures massive vertical padding separates this from adjacent sections
+    <Section size="large" className="bg-background overflow-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,20 +48,23 @@ export function CoffeeTalk({
         </motion.div>
       </Container>
 
-      {/* Full-bleed, breaking out of Container — the "large immersive
-          photograph" the section is built around. */}
+      {/* 
+        The Immersive Photograph:
+        Replaced aspect-video with vh units so it acts like a massive editorial window.
+      */}
       <motion.div
-        initial={{ opacity: 0, scale: 1.02 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}
-        transition={transition}
-        className="relative mt-12 aspect-video w-full overflow-hidden md:mt-16"
+        transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+        className="relative mt-16 w-full h-[50vh] md:h-[60vh] lg:h-[75vh] overflow-hidden lg:mt-24"
       >
         <Image
           src={imageSrc}
           alt={imageAlt}
           fill
-          className="object-cover"
+          // Added a 10-second ease-out hover zoom for continuous, breathing motion
+          className="object-cover transition-transform duration-[10s] ease-out hover:scale-[1.03]"
           sizes="100vw"
         />
       </motion.div>
@@ -78,33 +75,31 @@ export function CoffeeTalk({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ ...transition, delay: 0.15 }}
-          className="mx-auto mt-12 flex max-w-2xl flex-col items-center text-center md:mt-16"
+          className="mx-auto mt-16 flex max-w-3xl flex-col items-center text-center lg:mt-20"
         >
-          {/* Three subtle highlights — plain text, not icon cards, to stay
-              understated per the brief. */}
-          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+          {/* Subtle highlights */}
+          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
             {highlights.map((highlight, index) => (
               <li key={highlight.label} className="flex items-center gap-6">
                 {index > 0 && (
-                  <span aria-hidden="true" className="h-1 w-1 rounded-full bg-primary/30" />
+                  <span aria-hidden="true" className="h-1 w-1 rounded-full bg-accent/40" />
                 )}
-                <span className="text-caption uppercase tracking-[0.2em] text-accent">
+                <span className="text-caption uppercase tracking-[0.2em] text-primary/90">
                   {highlight.label}
                 </span>
               </li>
             ))}
           </ul>
 
-          {/* Refined text link, not a button — smooth-scrolls to the
-              Offerings section (scroll-smooth is set globally on <html>). */}
+          {/* Upgraded to the project's standard tracking link style */}
           <a
             href={ctaHref}
-            className="group mt-8 inline-flex items-center gap-2 rounded-button text-body text-primary transition-colors duration-200 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="group mt-12 inline-flex items-center gap-2 rounded-button text-body uppercase tracking-wider text-accent transition-colors duration-500 hover:text-primary focus-visible:outline-none"
           >
             {ctaLabel}
             <span
               aria-hidden="true"
-              className="transition-transform duration-500 group-hover:translate-x-1"
+              className="transition-transform duration-500 group-hover:translate-x-2"
             >
               &rarr;
             </span>
