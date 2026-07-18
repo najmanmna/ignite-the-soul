@@ -63,6 +63,7 @@ export default function Home() {
         description="A real moment from our community, in her own words."
         videoSrc="/videos/testimonial-reel.mp4"
         videoLabel="A woman sharing her experience with Ignite The Soul"
+        posterSrc="/images/testimonial-poster.jpg"
       />
       <CTA
         heading="You Don't Have To Walk Alone"

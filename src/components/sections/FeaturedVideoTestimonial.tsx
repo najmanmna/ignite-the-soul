@@ -13,6 +13,7 @@ interface FeaturedVideoTestimonialProps {
   description?: string;
   videoSrc?: string;
   videoLabel?: string;
+  posterSrc?: string;
   ctaLabel?: string;
   ctaHref?: string;
 }
@@ -27,6 +28,7 @@ export function FeaturedVideoTestimonial({
   description,
   videoSrc,
   videoLabel = "Video testimonial",
+  posterSrc,
   ctaLabel = "Explore More Stories",
   ctaHref = "/testimonials",
 }: FeaturedVideoTestimonialProps) {
@@ -55,6 +57,7 @@ export function FeaturedVideoTestimonial({
               <video
                 ref={videoRef}
                 src={videoSrc}
+                poster={posterSrc}
                 controls={isPlaying}
                 playsInline
                 loop
