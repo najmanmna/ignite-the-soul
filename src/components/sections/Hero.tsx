@@ -42,7 +42,7 @@ export function Hero({ heading, description, ctaLabel, ctaHref }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={transition}
-            className="text-hero font-display font-medium text-primary xl:text-hero-lg"
+            className="text-hero font-display font-medium text-secondary xl:text-hero-lg"
           >
             {heading}
           </motion.h1>
@@ -51,7 +51,7 @@ export function Hero({ heading, description, ctaLabel, ctaHref }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transition, delay: 0.2 }}
-            className="mt-6 max-w-lg text-body-lg font-medium text-primary/80"
+            className="mt-6 max-w-lg text-body-lg font-medium text-secondary/80"
           >
             {description}
           </motion.p>

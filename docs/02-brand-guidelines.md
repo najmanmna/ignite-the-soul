@@ -347,21 +347,21 @@ Luxury through simplicity.
 
 Primary
 
-Deep Teal
+Deep Sage Green
 
-`#1F5A5A`
+`#5F7161`
 
-Represents trust, grounding, and emotional stability.
+Represents healing, nature, and renewal.
 
 ---
 
 Secondary
 
-Sage Green
+Deep Teal
 
-`#A8B8A2`
+`#1F5A5A`
 
-Represents healing, nature, and renewal.
+Represents trust, grounding, and emotional stability.
 
 ---
 

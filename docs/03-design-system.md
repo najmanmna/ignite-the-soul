@@ -81,30 +81,32 @@ Every spacing decision, border radius, button, animation, and typography choice 
 
 ## Primary
 
-Deep Teal
+Deep Sage Green
 
-`#1F5A5A`
+`#5F7161`
 
 Purpose
 
 - Primary buttons
 - Footer
 - Navigation
-- Interactive elements
+- Interactive elements (brand chrome only — see Secondary for body/heading text)
+
+Pairs with Ivory text (not Deep Charcoal/Teal) — dark enough that light text is needed for contrast.
 
 ---
 
 ## Secondary
 
-Sage Green
+Deep Teal
 
-`#A8B8A2`
+`#1F5A5A`
 
 Purpose
 
-- Background accents
+- Body & heading text (ink color — Sage Green is too light for text legibility)
 - Cards
-- Highlights
+- Outline button borders and hover states
 
 ---
 
@@ -336,9 +338,9 @@ Used only when necessary.
 
 ## Primary
 
-Filled Deep Teal
+Filled Deep Sage Green
 
-White text
+Ivory text
 
 Soft hover transition
 

@@ -63,8 +63,11 @@ export function CoffeeTalk({
           src={imageSrc}
           alt={imageAlt}
           fill
-          // Slow, subtle hover zoom for continuous, breathing motion
-          className="object-cover transition-transform duration-1000 ease-out hover:scale-105"
+          // Slow, subtle hover zoom for continuous, breathing motion.
+          // Biased toward the top third on md+ — full object-top pushed all
+          // the crop onto the bottom instead; this splits it more evenly
+          // while still favoring the top over a plain center crop.
+          className="object-cover transition-transform duration-1000 ease-out hover:scale-105 md:object-[center_25%]"
           sizes="100vw"
         />
       </motion.div>
@@ -88,7 +91,7 @@ export function CoffeeTalk({
                     className="hidden h-1 w-1 rounded-full bg-accent/40 sm:block"
                   />
                 )}
-                <span className="text-caption uppercase tracking-[0.2em] text-primary/90">
+                <span className="text-caption uppercase tracking-[0.2em] text-secondary/90">
                   {highlight.label}
                 </span>
               </li>
@@ -98,7 +101,7 @@ export function CoffeeTalk({
           {/* Upgraded to the project's standard tracking link style */}
           <a
             href={ctaHref}
-            className="group mt-12 inline-flex items-center gap-2 rounded-button text-body uppercase tracking-wider text-accent transition-colors duration-500 hover:text-primary focus-visible:outline-none"
+            className="group mt-12 inline-flex items-center gap-2 rounded-button text-body uppercase tracking-wider text-accent transition-colors duration-500 hover:text-secondary focus-visible:outline-none"
           >
             {ctaLabel}
             <span

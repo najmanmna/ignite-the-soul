@@ -74,11 +74,10 @@ export function FeaturedVideoTestimonial({
             className="flex w-full flex-col items-center lg:col-span-7 lg:items-start"
           >
             {videoSrc ? (
-              /*
-                On mobile: aspect-9/16 keeps it proportional.
-                On desktop: lg:aspect-auto lg:h-[85vh] locks it to 85% of the screen height.
-              */
-              <div className="relative aspect-9/16 w-full overflow-hidden rounded-image bg-muted shadow-lg transition-transform duration-1000 ease-out hover:scale-105 lg:aspect-auto lg:h-[85vh]">
+              // aspect-9/16 stays fixed at every breakpoint so the video is
+              // never cropped — a variable-height desktop crop was cutting
+              // into the vertical video before.
+              <div className="relative aspect-9/16 w-full overflow-hidden rounded-image bg-muted shadow-lg transition-transform duration-1000 ease-out hover:scale-105">
                 <video
                   ref={videoRef}
                   src={videoSrc}
@@ -99,7 +98,7 @@ export function FeaturedVideoTestimonial({
                     aria-label={`Play ${videoLabel}`}
                     className="group absolute inset-0 flex items-center justify-center bg-primary/5 transition-colors duration-700 hover:bg-primary/20 focus-visible:outline-none"
                   >
-                    <span className="flex h-24 w-24 items-center justify-center rounded-full bg-background text-primary shadow-xl transition-transform duration-700 group-hover:scale-110">
+                    <span className="flex h-24 w-24 items-center justify-center rounded-full bg-background text-secondary shadow-xl transition-transform duration-700 group-hover:scale-110">
                       <svg
                         width="36"
                         height="36"
@@ -117,7 +116,7 @@ export function FeaturedVideoTestimonial({
                     type="button"
                     onClick={togglePlay}
                     aria-label={`Pause ${videoLabel}`}
-                    className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center rounded-full bg-background/80 text-primary shadow-soft transition-colors hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center rounded-full bg-background/80 text-secondary shadow-soft transition-colors hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <rect x="6" y="5" width="4" height="14" rx="1" />
@@ -130,7 +129,7 @@ export function FeaturedVideoTestimonial({
               <div
                 role="img"
                 aria-label="Video testimonial coming soon"
-                className="flex aspect-9/16 w-full items-center justify-center rounded-image bg-muted lg:aspect-auto lg:h-[85vh]"
+                className="flex aspect-9/16 w-full items-center justify-center rounded-image bg-muted"
               >
                 <svg
                   width="48"
@@ -171,7 +170,7 @@ export function FeaturedVideoTestimonial({
               >
                 {testimonial ? (
                   <>
-                    <p className="text-body-lg font-display italic leading-relaxed text-primary/90">
+                    <p className="text-body-lg font-display italic leading-relaxed text-secondary/90">
                       &ldquo;{testimonial.quote}&rdquo;
                     </p>
                     <p className="mt-4 text-caption uppercase tracking-[0.2em] text-accent">
@@ -179,7 +178,7 @@ export function FeaturedVideoTestimonial({
                     </p>
                   </>
                 ) : (
-                  <p className="text-body font-sans font-light italic text-primary/50">
+                  <p className="text-body font-sans font-light italic text-secondary/50">
                     Her story will be featured here soon.
                   </p>
                 )}
@@ -195,7 +194,7 @@ export function FeaturedVideoTestimonial({
             >
               <Link
                 href={ctaHref}
-                className="group inline-flex items-center gap-2 rounded-button text-body uppercase tracking-wider text-accent transition-colors duration-500 hover:text-primary focus-visible:outline-none"
+                className="group inline-flex items-center gap-2 rounded-button text-body uppercase tracking-wider text-accent transition-colors duration-500 hover:text-secondary focus-visible:outline-none"
               >
                 {ctaLabel}
                 <span

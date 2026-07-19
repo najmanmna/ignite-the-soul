@@ -112,7 +112,7 @@ export function OfferingsPreview({
                         aria-label={`${offering.name} photography coming soon`}
                         className="flex h-full w-full items-center justify-center bg-secondary/40"
                       >
-                        <span className="text-caption uppercase tracking-[0.2em] text-primary/60">
+                        <span className="text-caption uppercase tracking-[0.2em] text-secondary/60">
                           Coming Soon
                         </span>
                       </div>
@@ -123,7 +123,7 @@ export function OfferingsPreview({
                   <div className={isFeatured ? "sm:w-2/5" : undefined}>
                     <h3
                       className={cn(
-                        "mb-3 font-display text-primary transition-colors duration-500 group-hover:text-accent",
+                        "mb-3 font-display text-secondary transition-colors duration-500 group-hover:text-accent",
                         isFeatured ? "text-h3 md:text-h2" : "text-h4 md:text-h3"
                       )}
                     >
@@ -131,7 +131,7 @@ export function OfferingsPreview({
                     </h3>
                     <p
                       className={cn(
-                        "mb-6 text-primary/70",
+                        "mb-6 text-secondary/70",
                         isFeatured ? "text-body-lg" : "text-body line-clamp-2"
                       )}
                     >
@@ -139,7 +139,7 @@ export function OfferingsPreview({
                     </p>
 
                     {/* Subtle interaction cue instead of a heavy button */}
-                    <span className="inline-flex items-center gap-2 text-caption uppercase tracking-[0.2em] text-accent transition-colors duration-500 group-hover:text-primary">
+                    <span className="inline-flex items-center gap-2 text-caption uppercase tracking-[0.2em] text-accent transition-colors duration-500 group-hover:text-secondary">
                       Explore{" "}
                       <span
                         aria-hidden="true"

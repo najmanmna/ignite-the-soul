@@ -17,20 +17,29 @@
   --foreground: #2d2d2d; /* Deep Charcoal */
   --muted-foreground: #6f6a66; /* Warm Gray */
 
-  --primary: #1f5a5a; /* Deep Teal */
-  --primary-foreground: #faf8f5;
+  /* Client request: Primary and Secondary swapped (2026-07-19) — Primary is
+     now Sage Green (brand chrome: Navbar/Footer/CTA/primary buttons),
+     Secondary is now Deep Teal (kept in the palette as the dark "ink" color
+     for body/heading text and Cards, since Sage is too light for that role).
+     Primary was darkened to Deep Sage (2026-07-19) — at that darkness, Teal
+     foreground text no longer has enough contrast (dark-on-dark), so
+     foreground switched to Ivory (~4.9:1 contrast), matching the same
+     dark-bg/light-text pairing already used for Secondary. */
+  --primary: #5f7161; /* Deep Sage Green */
+  --primary-foreground: #faf8f5; /* Ivory */
 
-  --secondary: #a8b8a2; /* Sage Green */
-  --secondary-foreground: #2d2d2d;
+  --secondary: #1f5a5a; /* Deep Teal */
+  --secondary-foreground: #faf8f5; /* Ivory */
 
   --muted: #e9dfc9; /* Sand */
 
   --accent: #a66a3f; /* Bronze */
   --accent-foreground: #faf8f5;
 
-  /* Card purpose is explicitly "Sage Green" per docs/03-design-system.md Color System */
-  --card: #a8b8a2;
-  --card-foreground: #2d2d2d;
+  /* Card purpose is explicitly "Sage Green" per docs/03-design-system.md Color System,
+     which post-swap is Secondary's value (Deep Teal). */
+  --card: #1f5a5a;
+  --card-foreground: #faf8f5;
 
   /* Not documented explicitly — defaulting popovers to the base canvas for legibility */
   --popover: #faf8f5;

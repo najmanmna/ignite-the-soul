@@ -17,12 +17,18 @@ const sizeStyles: Record<ButtonSize, string> = {
   large: "min-h-12 px-10 py-4 text-body-lg",
 };
 
+// "primary"/"inverse" intentionally reference the Primary token (Sage Green,
+// brand chrome). "secondary"/"text" reference the Secondary token (Deep Teal)
+// instead of Primary — those are outline/inline styles meant to sit directly
+// on light backgrounds, and Sage Green doesn't have enough contrast there;
+// Teal (Secondary, post color-swap) does.
 const variantStyles: Record<ButtonVariant, string> = {
   primary: "bg-primary text-primary-foreground hover:bg-primary/90",
-  secondary: "border border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground",
-  text: "py-1 text-body text-primary underline-offset-4 hover:underline",
-  // Solid fill for use on Primary-colored (Deep Teal) backgrounds, e.g. the
-  // CTA section — colors inverted relative to `primary` (ivory bg, teal text).
+  secondary:
+    "border border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-secondary-foreground",
+  text: "py-1 text-body text-secondary underline-offset-4 hover:underline",
+  // Solid fill for use on Primary-colored (Deep Sage) backgrounds, e.g. the
+  // CTA section — colors inverted relative to `primary` (Ivory bg, sage text).
   inverse: "bg-primary-foreground text-primary hover:bg-muted",
 };
 

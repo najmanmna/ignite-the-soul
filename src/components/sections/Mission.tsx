@@ -37,7 +37,7 @@ export function Mission({ eyebrow, heading, body }: MissionProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ ...transition, delay: 0.1 }}
-            className="mb-8 text-h3 font-display text-primary md:text-h2 lg:text-h1"
+            className="mb-8 text-h3 font-display text-secondary md:text-h2 lg:text-h1"
           >
             {heading}
           </motion.h2>
@@ -47,7 +47,7 @@ export function Mission({ eyebrow, heading, body }: MissionProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ ...transition, delay: 0.2 }}
-            className="max-w-3xl text-body font-sans font-light text-primary/80 md:text-body-lg"
+            className="max-w-3xl text-body font-sans font-light text-secondary/80 md:text-body-lg"
           >
             {body}
           </motion.p>

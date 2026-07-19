@@ -26,7 +26,7 @@ export function FounderPreview({
   role,
   ctaLabel,
   ctaHref,
-  imageUrl = "/images/founder-2.png",
+  imageUrl = "/images/founder-image.jpeg",
   imageAlt = "Mafaza Rafeek, Founder of Ignite The Soul",
 }: FounderPreviewProps) {
   const transition = { duration: 1.2, ease: [0.25, 0.1, 0.25, 1] as const };
@@ -71,7 +71,7 @@ export function FounderPreview({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ ...transition, delay: 0.1 }}
-              className="mb-8 text-h3 font-display text-primary md:text-h2"
+              className="mb-8 text-h3 font-display text-secondary md:text-h2"
             >
               {heading}
             </motion.h2>
@@ -83,19 +83,19 @@ export function FounderPreview({
               transition={{ ...transition, delay: 0.2 }}
               className="relative"
             >
-              <p className="text-h4 font-display italic text-primary/90 md:text-h3">
+              <p className="text-h4 font-display italic text-secondary/90 md:text-h3">
                 &ldquo;{statement}&rdquo;
               </p>
 
               <div className="mt-8 border-t border-accent/20 pt-8">
-                <p className="text-body font-sans font-medium text-primary">{name}</p>
-                <p className="mt-1 text-caption font-sans text-primary/70">{role}</p>
+                <p className="text-body font-sans font-medium text-secondary">{name}</p>
+                <p className="mt-1 text-caption font-sans text-secondary/70">{role}</p>
               </div>
 
               <div className="mt-10">
                 <Link
                   href={ctaHref}
-                  className="group inline-flex items-center gap-2 rounded-button text-body text-accent transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="group inline-flex items-center gap-2 rounded-button text-body text-accent transition-colors duration-200 hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   {ctaLabel}
                   <span
