@@ -165,27 +165,37 @@ Avoid overwhelming visitors with information.
 
 ### Experiences
 
-Coaching
-
-Retreats
+Coffee Talks
 
 Workshops
 
-Women's Circles
+Group Coaching
 
-Each experience should contain:
+Soulful Farm Retreat
 
-Introduction
+Each of these 4 Experiences is evergreen and can highlight one or more
+specific, time-bound Events underneath it (e.g. Soulful Farm Retreat → the
+October 2026 retreat, Workshops → Art Therapy / Vision Board Workshop dates,
+Group Coaching → an August cohort). Events come and go; the Experience
+stays. An Experience with no active Event just shows its description.
 
-Who It Is For
+The Offerings page keeps these two ideas visually separate: "Upcoming
+Experiences" is the flat, date-led list of active Events; "Explore Our
+Experiences" introduces the 4 Experiences themselves as alternating
+image/text sections. Neither section mixes the two concepts.
 
-What You'll Experience
+Each highlighted Event should contain:
 
-Benefits
+Title, status, and date/cadence
 
-Frequently Asked Questions
+A short summary (only when real, verified copy exists — never invented)
 
-Registration Form
+Optionally: itinerary, what's included, investment, logistics (as available,
+not fabricated when real details don't exist yet)
+
+Registration Form (implemented as one shared Contact form with an offering
+selector, pre-filled from the originating CTA, rather than a separate form
+per experience)
 
 ---
 

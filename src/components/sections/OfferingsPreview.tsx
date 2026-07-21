@@ -8,14 +8,14 @@ import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/utils/cn";
-import type { Offering } from "@/types/offering";
+import type { Experience } from "@/types/experience";
 
 interface OfferingsPreviewProps {
   id?: string;
   eyebrow?: string;
   heading: string;
   description?: string;
-  offerings: Offering[];
+  experiences: Experience[];
   ctaLabel: string;
   ctaHref: string;
 }
@@ -25,7 +25,7 @@ export function OfferingsPreview({
   eyebrow = "Experiences",
   heading,
   description,
-  offerings,
+  experiences,
   ctaLabel,
   ctaHref,
 }: OfferingsPreviewProps) {
@@ -62,16 +62,16 @@ export function OfferingsPreview({
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-3 lg:gap-x-12"
         >
-          {offerings.map((offering, index) => {
+          {experiences.map((offering, index) => {
             const isFeatured = index === 0;
             return (
               <motion.li
-                key={offering.name}
+                key={offering.slug}
                 variants={itemVariants}
                 className={cn("group", isFeatured && "sm:col-span-3")}
               >
                 <Link
-                  href={offering.href || "/offerings"}
+                  href={`/contact?offering=${offering.slug}`}
                   className={cn("block", isFeatured && "sm:flex sm:items-center sm:gap-10 lg:gap-16")}
                 >
                   {/* The Visual: featured gets a wide crop and takes 3/5 of the

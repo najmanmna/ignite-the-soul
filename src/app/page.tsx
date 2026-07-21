@@ -6,9 +6,11 @@ import { OfferingsPreview } from "@/components/sections/OfferingsPreview";
 import { PastEvents } from "@/components/sections/PastEvents";
 import { FeaturedVideoTestimonial } from "@/components/sections/FeaturedVideoTestimonial";
 import { CTA } from "@/components/sections/CTA";
-import { offerings } from "@/data/offerings";
+import { getExperiences } from "@/data/experiences";
 
-export default function Home() {
+export default async function Home() {
+  const experiences = await getExperiences();
+
   return (
     <>
       <Hero
@@ -50,7 +52,7 @@ export default function Home() {
         eyebrow="Experiences"
         heading="Explore the Experiences"
         description="Four ways to begin. Choose what feels right for where you are."
-        offerings={offerings}
+        experiences={experiences}
         ctaLabel="Explore Our Experiences"
         ctaHref="/offerings"
       />

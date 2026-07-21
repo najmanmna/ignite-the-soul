@@ -122,15 +122,9 @@ Most visitors are expected to discover Ignite The Soul through:
 The website will showcase four primary experiences.
 The website will showcase authentic video testimonials from previous participants to strengthen trust and communicate the real impact of Ignite The Soul experiences.
 
-## Coaching
+## Coffee Talks
 
-Personal guidance that helps women navigate challenges, build confidence, and reconnect with themselves.
-
----
-
-## Retreats
-
-Immersive wellness experiences focused on rest, reflection, connection, and growth.
+Guided conversations and meaningful connection in a warm, welcoming circle, every Saturday evening.
 
 ---
 
@@ -140,11 +134,24 @@ Interactive learning experiences designed around specific themes that encourage 
 
 ---
 
-## Women's Circles
+## Group Coaching
 
-Community gatherings where women can share experiences, connect deeply, and support one another.
+An immersive transformation journey over eight weeks.
 
 ---
+
+## Soulful Farm Retreat
+
+A soulful evening designed for women to relax, reconnect with nature, nourish the mind, and embrace inner peace.
+
+---
+
+These four Experiences are evergreen. Specific, time-bound Events run under
+them — e.g. the October 2026 Soulful Farm Retreat, Coffee Talk Season 2, an
+Art Therapy or Vision Board Workshop date, or an August Group Coaching
+cohort — and change over time. The Offerings page's "Upcoming Experiences"
+section highlights whichever Events are currently scheduled; "Explore Our
+Experiences" introduces the four Experiences themselves.
 
 Every offering includes a dedicated enquiry form with the selected offering automatically pre-filled.
 
